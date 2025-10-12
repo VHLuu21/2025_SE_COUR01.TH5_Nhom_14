@@ -1,13 +1,14 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mysql_client/mysql_client.dart';
 
 class DbService {
   static Future<MySQLConnection> connect() async {
     final con = await MySQLConnection.createConnection(
-      host: "cinenight-db-2025-cinenight25.e.aivencloud.com",
-      port: 13121,
-      userName: "avnadmin",
-      password: "AVNS_a7b4r3jvOtYT7Mp-Ccl",
-      databaseName: "defaultdb",
+      host: dotenv.env['DB_HOST'] ?? '',
+      port: int.parse(dotenv.env['DB_PORT'] ?? '0'),
+      userName: dotenv.env['DB_USER'] ?? '',
+      password: dotenv.env['DB_PASSWORD'] ?? '',
+      databaseName: dotenv.env['DB_NAME'] ?? '',
       secure: true,
     );
     await con.connect();

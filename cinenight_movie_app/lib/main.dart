@@ -2,6 +2,7 @@ import 'package:cinenight_movie_app/core/theme/app_text_size.dart';
 import 'package:cinenight_movie_app/provider/text_size_notifier.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'ui/screens/splash_screen.dart';
 import 'provider/movie_provider.dart';
@@ -10,6 +11,9 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+
+  //Load file env trước khi chạy app
+  await dotenv.load(fileName: ".env");
 
   final prefs = await SharedPreferences.getInstance();
   final initialSize = TextSizeNotifier.loadFromPrefs(prefs);

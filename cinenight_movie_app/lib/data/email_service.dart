@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server/gmail.dart';
 
@@ -5,12 +6,13 @@ Future<void> emailService({
   required String toEmail,
   required String otpCode,
 }) async {
-  // Email account information
-  const String yourEmail = 'your_email@gmail.com';
-  const String appPassWord = 'your_password';
+  // Thông tin tài khoản email gửi
+  final String yourEmail = dotenv.env['EMAIL_ADDRESS'] ?? '';
+  final String appPassWord = dotenv.env['EMAIL_APP_PASSWORD'] ?? '';
 
   final smtpServer = gmail(yourEmail, appPassWord);
 
+  // Nội dung gửi
   final message = Message()
    ..from = Address(yourEmail, 'CineNight')
    ..recipients.add(toEmail)

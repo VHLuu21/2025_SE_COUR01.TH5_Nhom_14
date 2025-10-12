@@ -1,9 +1,10 @@
-class TMDBApi {
-  static const String apiKey = "43bc0beea3543d12a5f97c1d7438fc04";
-  static const String baseUrl = "https://api.themoviedb.org/3";
-  static const String imageBaseUrl = "https://image.tmdb.org/t/p/w500";
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-  //Enpoint popular
+class TMDBApi {
+  static final String apiKey = dotenv.env['TMDB_API_KEY'] ?? '';
+  static final String baseUrl = dotenv.env['TMDB_BASE_URL'] ?? '';
+  static final String imageBaseUrl = dotenv.env['TMDB_IMAGE_URL'] ?? '';
+
   static String getPopularMovies(String lang) =>
       "$baseUrl/movie/popular?api_key=$apiKey&language=$lang&page=1";
   

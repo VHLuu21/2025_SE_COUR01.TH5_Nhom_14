@@ -40,10 +40,6 @@ top rated, phim sắp chiếu và lưu danh sách yêu thích.
   + flutter pub get
 - Chạy app:
   + flutter run
-## Cấu Hình API Key
-1. Đăng kí tại The Movie Database (TMdb)
-2. Lấy API Key và thêm vào TMdb_api.dart
-   - static const String apiKey = "YOUR_API_KEY"
 
 
 

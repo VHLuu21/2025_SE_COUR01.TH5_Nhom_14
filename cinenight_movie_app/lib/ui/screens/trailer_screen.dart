@@ -18,7 +18,7 @@ class _TrailerScreenState extends State<TrailerScreen> {
   void initState() {
     super.initState();
     _controller = YoutubePlayerController.fromVideoId(
-      videoId: widget.youtubeKey, // chỉ truyền key
+      videoId: widget.youtubeKey,
       autoPlay: true,
       params: const YoutubePlayerParams(
         showFullscreenButton: true,
@@ -31,6 +31,12 @@ class _TrailerScreenState extends State<TrailerScreen> {
   @override
   void dispose() {
     _controller.close();
+
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
+    );
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,

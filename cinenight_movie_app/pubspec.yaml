@@ -79,6 +79,7 @@ flutter:
     - assets/images/logo/
     - assets/translations/
     - .env
+    - assets/email_style/otp_style.html
 
 
 fonts:

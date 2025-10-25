@@ -56,7 +56,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     final movieProvider = context.watch<MovieProvider>();
     final lang = movieProvider.language;
-    final movie = detailedMovie ?? widget.movie; // dùng movie chi tiết
+    final movie = detailedMovie ?? widget.movie;
     final isWishlist = movieProvider.isInWishlist(movie);
     final isFavorite = movieProvider.isFavorite(movie);
 

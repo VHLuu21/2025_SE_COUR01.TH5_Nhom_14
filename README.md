@@ -1,6 +1,6 @@
 # CineNight - Movie App
-Ứng dụng xem phim mobile được phát triển bằng Flutter
-Cine giúp giúp bạn dễ dàng khám phá các bộ phim thịnh hành, tìm kiếm các bộ phim yêu thích và lưu trữ để xem lại
+Ứng dụng xem phim mobile được phát triển bằng Flutter <br/>
+CineNight giúp bạn dễ dàng khám phá các bộ phim thịnh hành, tìm kiếm các bộ phim yêu thích và lưu trữ để xem lại
 
 ## Giới Thiệu Ứng Dụng
 CineNight là ứng dụng mobile xem phim với giao diện hiện đại. Người dùng có thể xem danh sách phim mới, trending,
